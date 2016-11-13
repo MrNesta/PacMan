@@ -1,0 +1,10 @@
+E:\С#\Pac-Man\My\PacMan\IEnemiesBehaviorAlgorithm\bin\Debug\IEnemiesBehaviorAlgorithm.dll
+E:\С#\Pac-Man\My\PacMan\IEnemiesBehaviorAlgorithm\bin\Debug\IEnemiesBehaviorAlgorithm.pdb
+E:\С#\Pac-Man\My\PacMan\IEnemiesBehaviorAlgorithm\obj\Debug\IEnemiesBehaviorAlgorithm.csprojResolveAssemblyReference.cache
+E:\С#\Pac-Man\My\PacMan\IEnemiesBehaviorAlgorithm\obj\Debug\IEnemiesBehaviorAlgorithm.dll
+E:\С#\Pac-Man\My\PacMan\IEnemiesBehaviorAlgorithm\obj\Debug\IEnemiesBehaviorAlgorithm.pdb
+F:\С#\Pac-Man\My\PacMan\IEnemiesBehaviorAlgorithm\bin\Debug\IEnemiesBehaviorAlgorithm.dll
+F:\С#\Pac-Man\My\PacMan\IEnemiesBehaviorAlgorithm\bin\Debug\IEnemiesBehaviorAlgorithm.pdb
+F:\С#\Pac-Man\My\PacMan\IEnemiesBehaviorAlgorithm\obj\Debug\IEnemiesBehaviorAlgorithm.csprojResolveAssemblyReference.cache
+F:\С#\Pac-Man\My\PacMan\IEnemiesBehaviorAlgorithm\obj\Debug\IEnemiesBehaviorAlgorithm.dll
+F:\С#\Pac-Man\My\PacMan\IEnemiesBehaviorAlgorithm\obj\Debug\IEnemiesBehaviorAlgorithm.pdb

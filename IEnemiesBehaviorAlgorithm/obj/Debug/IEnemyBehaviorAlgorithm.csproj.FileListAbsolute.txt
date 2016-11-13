@@ -1,0 +1,5 @@
+F:\С#\Pac-Man\My\PacMan\IEnemiesBehaviorAlgorithm\bin\Debug\IEnemiesBehaviorAlgorithm.dll
+F:\С#\Pac-Man\My\PacMan\IEnemiesBehaviorAlgorithm\bin\Debug\IEnemiesBehaviorAlgorithm.pdb
+F:\С#\Pac-Man\My\PacMan\IEnemiesBehaviorAlgorithm\obj\Debug\IEnemyBehaviorAlgorithm.csprojResolveAssemblyReference.cache
+F:\С#\Pac-Man\My\PacMan\IEnemiesBehaviorAlgorithm\obj\Debug\IEnemiesBehaviorAlgorithm.dll
+F:\С#\Pac-Man\My\PacMan\IEnemiesBehaviorAlgorithm\obj\Debug\IEnemiesBehaviorAlgorithm.pdb
