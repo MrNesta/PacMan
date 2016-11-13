@@ -14,6 +14,21 @@
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,9 +49,46 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>PacManGame.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.2.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,7 +107,45 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Core\EnemiesBehaviorAlgorithm.cs" />
+    <Compile Include="EF\RecordsContext.cs" />
+    <Compile Include="Infrastructure\CanvasAssistant.cs" />
+    <Compile Include="Infrastructure\LogService.cs" />
+    <Compile Include="Infrastructure\DialogCloser.cs" />
+    <Compile Include="Infrastructure\PluginsDialogService.cs" />
+    <Compile Include="Infrastructure\RecordsTableDialogService.cs" />
+    <Compile Include="Interfaces\IDialogService.cs" />
+    <Compile Include="Infrastructure\ImageUploadService.cs" />
+    <Compile Include="Infrastructure\PlayerNameDialogService.cs" />
+    <Compile Include="Interfaces\IGameField.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Model\Character.cs" />
+    <Compile Include="Model\Difficulty.cs" />
+    <Compile Include="Model\Dot.cs" />
+    <Compile Include="Model\Fruit.cs" />
+    <Compile Include="Core\GameField.cs" />
+    <Compile Include="Model\Enemy.cs" />
+    <Compile Include="Model\EnemyPlace.cs" />
+    <Compile Include="Model\ImagesPathDataBase.cs" />
+    <Compile Include="Model\Level.cs" />
+    <Compile Include="Model\Pac.cs" />
+    <Compile Include="Model\Point.cs" />
+    <Compile Include="Repositories\PlayerRepository.cs" />
+    <Compile Include="Util\LibraryModule.cs" />
+    <Compile Include="ViewModel\DialogViewModelBase.cs" />
+    <Compile Include="ViewModel\GameViewModel.cs" />
+    <Compile Include="ViewModel\PluginsViewModel.cs" />
+    <Compile Include="ViewModel\RecordsTableViewModel.cs" />
+    <Compile Include="View\PlayerWindow.xaml.cs">
+      <DependentUpon>PlayerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PluginWindow.xaml.cs">
+      <DependentUpon>PluginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordsTableWindow.xaml.cs">
+      <DependentUpon>RecordsTableWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\GameWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -63,10 +153,24 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Model\Player.cs" />
+    <Compile Include="ViewModel\PlayerViewModel.cs" />
+    <Compile Include="View\GameWindow.xaml.cs">
+      <DependentUpon>GameWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\PlayerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PluginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordsTableWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -86,6 +190,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,6 +199,64 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IEnemiesBehaviorAlgorithm\IEnemiesBehaviorAlgorithm.csproj">
+      <Project>{6c6cc8d4-05bb-452a-a4ae-c2a5131ec9f5}</Project>
+      <Name>IEnemiesBehaviorAlgorithm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pacmanwindow.png" />
+    <Resource Include="Resources\pacmanwindow2.png" />
+    <Resource Include="Resources\pacmanwindow3.png" />
+    <Resource Include="Resources\pacmanwindow4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PacManGame.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="bin\Release\Resources\apple.png" />
+    <Resource Include="bin\Release\Resources\blinky.png" />
+    <Resource Include="bin\Release\Resources\blueenemy.png" />
+    <Resource Include="bin\Release\Resources\cherry.png" />
+    <Resource Include="bin\Release\Resources\clyde.png" />
+    <Resource Include="bin\Release\Resources\eyes.png" />
+    <Resource Include="bin\Release\Resources\inky.png" />
+    <Resource Include="bin\Release\Resources\melon.png" />
+    <Resource Include="bin\Release\Resources\orange.png" />
+    <Content Include="bin\Release\Resources\Pacman.mp3" />
+    <Resource Include="bin\Release\Resources\pacman.png" />
+    <Resource Include="bin\Release\Resources\pacmanfull.png" />
+    <Resource Include="bin\Release\Resources\pinky.png" />
+    <Resource Include="bin\Release\Resources\strawberry.png" />
+    <Resource Include="bin\Debug\Resources\apple.png" />
+    <Resource Include="bin\Debug\Resources\blinky.png" />
+    <Resource Include="bin\Debug\Resources\blueenemy.png" />
+    <Resource Include="bin\Debug\Resources\cherry.png" />
+    <Resource Include="bin\Debug\Resources\clyde.png" />
+    <Resource Include="bin\Debug\Resources\eyes.png" />
+    <Resource Include="bin\Debug\Resources\inky.png" />
+    <Resource Include="bin\Debug\Resources\melon.png" />
+    <Resource Include="bin\Debug\Resources\orange.png" />
+    <Content Include="bin\Debug\Resources\Pacman.mp3" />
+    <Resource Include="bin\Debug\Resources\pacman.png" />
+    <Resource Include="bin\Debug\Resources\pacmanfull.png" />
+    <Resource Include="bin\Debug\Resources\pinky.png" />
+    <Resource Include="bin\Debug\Resources\strawberry.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
